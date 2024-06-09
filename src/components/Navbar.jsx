@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CoinContext } from "../contexts/CoinContext";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const { setCurrency } = useContext(CoinContext);
@@ -26,11 +27,13 @@ function Navbar() {
   };
   return (
     <div className="flex justify-between items-center p-4 border-b border-white">
-      <h1 className="text-4xl font-sans text-white from-neutral-100">
+      <Link to={"/"} className="text-4xl font-sans text-white from-neutral-100">
         CryptoFeed
-      </h1>
+      </Link>
       <ul className="flex gap-4 list-none text-xl text-white font-semibold">
-        <li className=" cursor-pointer hover:text-gray-400">Home</li>
+        <Link to={"/"}>
+          <li className=" cursor-pointer hover:text-gray-400">Home</li>
+        </Link>
         <li className=" cursor-pointer hover:text-gray-400">Features</li>
         <li className=" cursor-pointer hover:text-gray-400">Pricing</li>
         <li className=" cursor-pointer hover:text-gray-400">Blog</li>

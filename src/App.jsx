@@ -11,7 +11,7 @@ import Coin from "./pages/Coin";
 function App() {
 
   return (
-    <div className=" bg-gradient-to-r from-indigo-700 to-purple-800">
+    <div className=" bg-gradient-to-r from-indigo-700 to-purple-800 ">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

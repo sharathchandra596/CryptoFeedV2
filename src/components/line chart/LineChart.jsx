@@ -1,0 +1,29 @@
+/* eslint-disable react/prop-types */
+import { useEffect, useState } from "react"
+import Chart from "react-google-charts"
+
+function LineChart({historicalData}) {
+
+    const [data,setData]=useState([["Date","Prices"]])
+    useEffect(()=>{
+        let dataCopy=[["Date","prices"]]
+        if(historicalData.prices){
+            historicalData.prices.map((item)=>{
+                dataCopy.push([`${new Date(item[0]).toLocaleDateString()}`,item[1]])
+            })
+            setData(dataCopy)
+        }
+    },[historicalData])
+  return (
+    <Chart
+    chartType="LineChart"
+    data={data}
+    height="90%"
+    width="70%"
+    />
+
+    
+  )
+}
+
+export default LineChart
